@@ -143,10 +143,6 @@ git remote add gitcode https://gitcode.net/xuxiaowei-io/nacos-console-ui.git
 git remote add gitlink https://gitlink.org.cn/xuxiaowei-io/nacos-console-ui.git
 </details>
 
-## 参考文档
-
-1. [Java SDK](https://nacos.io/docs/latest/guide/user/sdk/)
-
 ## 鸣谢
 
 1. 感谢 [![jetbrains](./static/jetbrains.ico)](https://www.jetbrains.com/)

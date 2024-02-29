@@ -117,7 +117,7 @@
 
 - Maven 仓库
     - [快照版](https://s01.oss.sonatype.org/content/repositories/snapshots/io/xuxiaowei/nacos/nacos-console-ui)
-        - 可下载最新的二进制快照（可直接运行的 jar 包）
+        - 可下载最新的二进制快照
     - [发布版](https://s01.oss.sonatype.org/content/repositories/releases/io/xuxiaowei/nacos/nacos-console-ui)
         - 暂未发布
 

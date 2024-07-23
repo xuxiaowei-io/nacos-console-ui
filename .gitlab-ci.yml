@@ -34,7 +34,7 @@ build:
     - git clone --depth 1 --branch $NACOS_TAG_VERSION https://github.com/alibaba/nacos.git
     - mkdir -p src/main/resources
     - cp -r nacos/console/src/main/resources/static src/main/resources
-    - mvn clean package source:jar javadoc:jar deploy -Pgpg -DskipTests=false
+    - mvn -e -U clean package source:jar javadoc:jar deploy -Pgpg -DskipTests=false
   artifacts:
     name: nacos-console-ui
     paths:

@@ -29,11 +29,13 @@ build:
     - sed -i "s#</servers>#<server><id>ossrh</id><username>$ossrh_user</username><password>$ossrh_pass</password></server>&#" $SETTINGS_FILE
     - VERSION=`mvn help:evaluate -Dexpression=project.version -q -DforceStdout`
     - echo $VERSION
-    - NACOS_TAG_VERSION=$(echo $VERSION | sed 's/-SNAPSHOT//')
+    - NACOS_TAG_VERSION=$(echo $VERSION | sed 's/-SNAPSHOT//' | sed 's/-page-size.*//')
     - echo $NACOS_TAG_VERSION
     - git clone --depth 1 --branch $NACOS_TAG_VERSION https://github.com/alibaba/nacos.git
     - mkdir -p src/main/resources
     - cp -r nacos/console/src/main/resources/static src/main/resources
+    - sed -i 's/pageSize:10/pageSize:100/g#' src/main/resources/static/js/main.js
+    - sed -i 's/("pageSize"):10/("pageSize"):100/g#' src/main/resources/static/js/main.js
     - mvn -e -U clean package source:jar javadoc:jar deploy -Pgpg -DskipTests=false
   artifacts:
     name: nacos-console-ui
